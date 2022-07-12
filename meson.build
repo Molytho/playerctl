@@ -2,7 +2,7 @@ project(
   'playerctl',
   'c',
   version: '2.4.1',
-  meson_version: '>=0.56.0'
+  meson_version: '>=0.61.0'
 )
 
 release_date = 'September 21, 2021'
@@ -13,6 +13,7 @@ pkgconfig = import('pkgconfig')
 datadir = get_option('datadir')
 bindir = get_option('bindir')
 prefix = get_option('prefix')
+libdir = get_option('libdir')
 
 version_conf = configuration_data()
 

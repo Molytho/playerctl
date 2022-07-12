@@ -1,0 +1,11 @@
+[Unit]
+Description=Playerctl daemon
+Documentation=man:playerctl(1)
+
+[Service]
+Type=dbus
+BusName=@application_id@
+ExecStart=@prefix@/@bindir@/playerctld
+
+[Install]
+Alias=dbus-@application_id@.service
