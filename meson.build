@@ -2,7 +2,7 @@ project(
   'playerctl',
   'c',
   version: '2.4.1',
-  meson_version: '>=0.56.0'
+  meson_version: '>=0.61.0'
 )
 
 release_date = 'September 21, 2021'

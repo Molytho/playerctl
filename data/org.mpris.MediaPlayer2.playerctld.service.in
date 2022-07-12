@@ -1,4 +1,4 @@
 [D-BUS Service]
 Name=@application_id@
 Exec=@prefix@/@bindir@/playerctld
-SystemdService=playerctld.service
+SystemdService=dbus-@application_id@.service

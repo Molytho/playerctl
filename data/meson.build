@@ -4,8 +4,10 @@ service_conf = configuration_data()
 service_conf.set('application_id', application_id)
 service_conf.set('bindir', bindir)
 service_conf.set('prefix', prefix)
+
 dbus_service = application_id + '.service'
 systemd_service = 'playerctld.service'
+systemd_service_install_dir = join_paths(libdir, 'systemd', 'user')
 
 configure_file(
   input: dbus_service + '.in',
@@ -19,8 +21,14 @@ configure_file(
 	input: systemd_service + '.in',
 	output: systemd_service,
 	install: true,
-	install_dir: join_paths(libdir, 'systemd', 'user'),
+	install_dir: systemd_service_install_dir,
 	configuration: service_conf
+)
+
+install_symlink(
+	'dbus-' + application_id + '.service',
+	pointing_to: systemd_service,
+	install_dir: systemd_service_install_dir
 )
 
 if get_option('bash-completions')
