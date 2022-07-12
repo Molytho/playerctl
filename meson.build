@@ -13,6 +13,7 @@ pkgconfig = import('pkgconfig')
 datadir = get_option('datadir')
 bindir = get_option('bindir')
 prefix = get_option('prefix')
+libdir = get_option('libdir')
 
 version_conf = configuration_data()
 
